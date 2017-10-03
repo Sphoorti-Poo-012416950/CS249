@@ -26,24 +26,10 @@ public class Main {
 		
 		driver.init(p0, p1, p2, p3, p4, p5, p6, p7, p8);
 				
-		driver.trigger(p0); //Traverse the tree using DFS to find out leaf nodes and send messages
-		System.out.println(p0);	
+		System.out.println("Value: " + driver.getTree().converge(p0));
+		System.out.println("Sequence: " + driver.getTree().getRoot().getSequence());
 	}
-	
-	public void trigger(Processor root) {
 
-		if(root.getChildern().size() == 0) {
-			root.sendMessageToMyBuffer(root);
-			return;
-		}
-		
-		Iterator<Processor> it = root.getChildern().iterator();
-		while(it.hasNext()) {
-			trigger(it.next());
-		}
-		
-	}
-	
 	public void init(Processor... p) {
 		t.insert(p[0], null);
 		t.insert(p[1], p[0]);
@@ -56,4 +42,8 @@ public class Main {
 		t.insert(p[8], p[5]);
 	}
 	
+	public Tree getTree() {
+		return t;
+	}
+
 }
