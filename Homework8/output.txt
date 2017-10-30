@@ -1,0 +1,12 @@
+2 consuming message from 1
+4 consuming message from 5
+2 got reply from 3
+3 consuming message from 4
+4 got reply from 5
+1 consuming message from 5
+2 got reply from 1
+2 consuming message from 3
+1 got reply from 5
+3 got reply from 4
+-------------------
+Leader Processor: 2
